@@ -1,0 +1,48 @@
+{
+  "name": "x-flexbox",
+  "version": "0.0.0",
+  "description": "Web Components which provide Flexbox features.",
+  "homepage": "https://github.com/1000ch/x-flexbox",
+  "bugs": {
+    "url": "https://github.com/1000ch/x-flexbox/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1000ch/x-flexbox.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "1000ch",
+    "email": "shogosensui@gmail.com",
+    "web": "https://github.com/1000ch"
+  },
+  "scripts": {
+    "build": "tsc && terser --output dist/flex-container.js dist/flex-item.js && terser --output dist/flex-container.js dist/flex-item.js",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "terser": "^4.3.1",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/test/*.test.ts"
+    ]
+  }
+}
