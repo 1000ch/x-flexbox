@@ -20,6 +20,32 @@ const templateHTML = `
 `;
 
 export default class FlexItem extends HTMLElement {
+  static get observedAttributes(): string[] {
+    return [
+      'order',
+      'flex-grow',
+      'flex-shrink',
+      'flex-basis'
+    ];
+  }
+
+  attributeChangedCallback(name: string, oldValue: string, newValue: string): void {
+    switch (name) {
+      case 'order':
+        this.style.order = newValue;
+        break;
+      case 'flex-grow':
+        this.style.flexGrow = newValue;
+        break;
+      case 'flex-shrink':
+        this.style.flexShrink = newValue;
+        break;
+      case 'flex-basis':
+        this.style.flexBasis = newValue;
+        break;
+    }
+  }
+
   /**
    * Gets the order of the object.
    */
