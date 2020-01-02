@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "tsc && terser --output dist/flex-container.js dist/flex-container.js && terser --output dist/flex-item.js dist/flex-item.js",
-    "prepublishOnly": "npm run build",
+    "prepublish": "npm run build",
     "test": "jest"
   },
   "devDependencies": {
