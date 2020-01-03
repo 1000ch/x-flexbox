@@ -16,8 +16,10 @@
     "email": "shogosensui@gmail.com",
     "web": "https://github.com/1000ch"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
-    "build": "tsc && terser --output dist/flex-container.js dist/flex-container.js && terser --output dist/flex-item.js dist/flex-item.js",
+    "build": "tsc && terser --output dist/index.js dist/index.js && terser --output dist/flex-container.js dist/flex-container.js && terser --output dist/flex-item.js dist/flex-item.js",
     "prepublish": "npm run build",
     "test": "jest"
   },
