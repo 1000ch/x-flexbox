@@ -32,8 +32,8 @@ Put `<flex-container>` and `<flex-item>`.
 
 ```html
 <flex-container flex-direction="column" flex-wrap="wrap">
-  <flex-item flex-grow="2"></x-cell>
-  <flex-item align-self="stretch"></x-cell>
+  <flex-item flex-grow="2"></flex-item>
+  <flex-item align-self="stretch"></flex-item>
 </flex-container>
 ```
 

@@ -1,8 +1,10 @@
 import FlexContainer from 'https://unpkg.com/x-flexbox/dist/flex-container.js';
 import FlexItem from 'https://unpkg.com/x-flexbox/dist/flex-item.js';
+import XMarked from 'https://unpkg.com/x-marked/dist/index.js';
 
 customElements.define('flex-container', FlexContainer);
 customElements.define('flex-item', FlexItem);
+customElements.define('x-marked', XMarked);
 
 const flexContainer = document.querySelector('#flex-container');
 const flexDirection = document.querySelector('#flex-direction');

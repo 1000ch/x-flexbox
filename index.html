@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>&lt;x-flexbox&gt;: Web Components which provide Flexbox features</title>
-    <link rel="stylesheet" href="https://unpkg.com/prism-themes/themes/prism-duotone-light.css">
     <style>
       * {
         box-sizing: border-box;
@@ -34,9 +33,19 @@
     <script type="module" src="index.js"></script>
     <script type="module">
       window.addEventListener('load', () => {
-        document.querySelectorAll('pre code').forEach(block => {
+        const xmarked = document.querySelector('x-marked');
+        xmarked.shadowRoot.querySelectorAll('pre code').forEach(block => {
           Prism.highlightElement(block);
         });
+
+        const css = new CSSStyleSheet();
+        css.replaceSync(`body, code { font-family: menlo, monospace; }`);
+        xmarked.shadowRoot.adoptedStyleSheets = [css];
+
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://unpkg.com/prism-themes/themes/prism-duotone-light.css';
+        xmarked.shadowRoot.appendChild(link);
       });
     </script>
   </head>
@@ -44,7 +53,7 @@
     <github-corner>
       <a href="https://github.com/1000ch/x-flexbox">GitHub</a>
     </github-corner>
-    <div class="container">
+    <div class="container" style="padding-bottom: 0;">
       <h1>&lt;x-flexbox&gt;</h1>
       <p>Web Components which provide Flexbox features.</p>
       <!-- Place this tag where you want the button to render. -->
@@ -131,24 +140,42 @@
           &lt;/flex-item&gt;
         </flex-item>
       </template>
-      <h2>Install</h2>
-      <pre><code class="bash">npm install x-flexbox</code></pre>
-      <h2>Usage</h2>
-      <p>Import <code>FlexContainer</code> and <code>FlexItem</code>, register them.</p>
-      <pre><code class="html">&lt;script type=&quot;module&quot;&gt;
-import FlexContainer from &apos;./x-flexbox/dist/flex-container.js&apos;;
-import FlexItem from &apos;./x-flexbox/dist/flex-item.js&apos;;
-
-customElements.define(&apos;flex-container&apos;, FlexContainer);
-customElements.define(&apos;flex-item&apos;, FlexItem);
-&lt;/script&gt;</code></pre>
-      <p>Put <code>&lt;flex-container&gt;</code> and <code>&lt;flex-item&gt;</code>.</p>
-      <pre><code class="html">&lt;flex-container flex-direction=&quot;row&quot; justify-content=&quot;center&quot;&gt;
-  &lt;flex-item align-self=&quot;center&quot;&gt;&lt;/flex-item&gt;
-  &lt;flex-item flex-grow=&quot;2&quot;&gt;&lt;/flex-item&gt;
-&lt;/flex-item&gt;</code></pre>
-      <h2>License</h2>
-      <p><a href="https://1000ch.mit-license.org" rel="nofollow">MIT</a> © <a href="https://github.com/1000ch">Shogo Sensui</a></p>
     </div>
+    <x-marked class="container">
+## Install
+
+Using [npm](https://www.npmjs.org/package/x-flexbox):
+
+```sh
+$ npm install x-flexbox
+```
+
+## Usage
+
+Import `FlexContainer` and `FlexItem`, register them.
+
+```html
+<script type="module">
+import FlexContainer from 'https://unpkg.com/x-flexbox/dist/flex-container.js';
+import FlexItem from 'https://unpkg.com/x-flexbox/dist/flex-item.js';
+
+customElements.define('flex-container', FlexContainer);
+customElements.define('flex-item', FlexItem);
+</script>
+```
+
+Put `<flex-container>` and `<flex-item>`.
+
+```html
+<flex-container flex-direction="column" flex-wrap="wrap">
+  <flex-item flex-grow="2"></flex-item>
+  <flex-item align-self="stretch"></flex-item>
+</flex-container>
+```
+
+## License
+
+[MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)
+    </x-marked>
   </body>
 </html>
