@@ -20,8 +20,8 @@ Import `FlexContainer` and `FlexItem`, register them.
 
 ```html
 <script type="module">
-import FlexContainer from 'https://cdn.jsdelivr.net/npm/x-flexbox/dist/flex-container.js';
-import FlexItem from 'https://cdn.jsdelivr.net/npm/x-flexbox/dist/flex-item.js';
+import FlexContainer from 'https://unpkg.com/x-flexbox/dist/flex-container.js';
+import FlexItem from 'https://unpkg.com/x-flexbox/dist/flex-item.js';
 
 customElements.define('flex-container', FlexContainer);
 customElements.define('flex-item', FlexItem);
