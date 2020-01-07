@@ -1,6 +1,5 @@
-import FlexContainer from 'https://unpkg.com/x-flexbox/dist/flex-container.js';
-import FlexItem from 'https://unpkg.com/x-flexbox/dist/flex-item.js';
-import XMarked from 'https://unpkg.com/x-marked/dist/index.js';
+import { FlexContainer, FlexItem } from 'https://unpkg.com/x-flexbox';
+import XMarked from 'https://unpkg.com/x-marked';
 
 customElements.define('flex-container', FlexContainer);
 customElements.define('flex-item', FlexItem);
