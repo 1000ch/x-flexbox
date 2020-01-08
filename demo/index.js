@@ -1,9 +1,7 @@
 import { FlexContainer, FlexItem } from 'https://unpkg.com/x-flexbox';
-import XMarked from 'https://unpkg.com/x-marked';
 
 customElements.define('flex-container', FlexContainer);
 customElements.define('flex-item', FlexItem);
-customElements.define('x-marked', XMarked);
 
 const flexContainer = document.querySelector('#flex-container');
 const flexDirection = document.querySelector('#flex-direction');

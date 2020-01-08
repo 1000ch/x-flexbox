@@ -13,117 +13,45 @@
         font-family: menlo, monospace;
         font-size: 16px;
       }
-      code {
-        font-family: menlo, monospace;
-      }
       .container {
         margin: auto;
         padding: 16px;
         max-width: 960px;
       }
-      h1 > img {
-        width: 100%;
-        max-width: 480px;
-      }
     </style>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script defer src="https://buttons.github.io/buttons.js"></script>
     <script defer src="https://unpkg.com/github-corner"></script>
-    <script type="module" src="index.js"></script>
+    <script type="module">
+      import XMarked from 'https://unpkg.com/x-marked';
+      import FluidIframe from 'https://unpkg.com/fluid-iframe';
+
+      customElements.define('x-marked', XMarked);
+      customElements.define('fluid-iframe', FluidIframe);
+
+      window.addEventListener('load', () => {
+        const xmarked = document.querySelector('x-marked');
+        const div = document.querySelector('div');
+        const h2 = xmarked.shadowRoot.querySelector('h2');
+        xmarked.shadowRoot.querySelector('div').insertBefore(div, h2);
+      });
+    </script>
   </head>
   <body>
-    <github-corner>
-      <a href="https://github.com/1000ch/x-flexbox">GitHub</a>
-    </github-corner>
-    <div class="container" style="padding-bottom: 0;">
-      <h1>&lt;x-flexbox&gt;</h1>
-      <p>Web Components which provide Flexbox features.</p>
+    <div>
       <!-- Place this tag where you want the button to render. -->
       <a class="github-button" href="https://github.com/1000ch/x-flexbox" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star 1000ch/grd on GitHub">Star</a>
       <!-- Place this tag where you want the button to render. -->
       <a class="github-button" href="https://github.com/1000ch" data-size="large" data-show-count="true" aria-label="Follow @1000ch on GitHub">Follow @1000ch</a>
-      <h2>Live Demo</h2>
-      <div style="margin-bottom: 16px;">
-        &lt;flex-container
-        flex-direction=<select id="flex-direction">
-          <option value="" selected>-</option>
-          <option value="row">row</option>
-          <option value="row-reverse">row-reverse</option>
-          <option value="column">column</option>
-          <option value="column-reverse">column-reverse</option>
-        </select>
-        flex-wrap=<select id="flex-wrap">
-          <option value="" selected>-</option>
-          <option value="nowrap">nowrap</option>
-          <option value="wrap">wrap</option>
-          <option value="wrap-reverse">wrap-reverse</option>
-        </select>
-        justify-content=<select id="justify-content">
-          <option value="" selected>-</option>
-          <option value="flex-start">flex-start</option>
-          <option value="flex-end">flex-end</option>
-          <option value="start">start</option>
-          <option value="end">end</option>
-          <option value="left">left</option>
-          <option value="right">right</option>
-          <option value="center">center</option>
-          <option value="space-between">space-between</option>
-          <option value="space-around">space-around</option>
-          <option value="space-evenly">space-evenly</option>
-        </select>
-        align-items=<select id="align-items">
-          <option value="" selected>-</option>
-          <option value="stretch">stretch</option>
-          <option value="flex-start">flex-start</option>
-          <option value="start">start</option>
-          <option value="self-start">self-start</option>
-          <option value="flex-end">flex-end</option>
-          <option value="end">end</option>
-          <option value="self-end">self-end</option>
-          <option value="center">center</option>
-          <option value="baseline">baseline</option>
-        </select>
-        align-content=<select id="align-content">
-          <option value="" selected>-</option>
-          <option value="flex-start">flex-start</option>
-          <option value="start">start</option>
-          <option value="flex-end">flex-end</option>
-          <option value="end">end</option>
-          <option value="center">center</option>
-          <option value="space-between">space-between</option>
-          <option value="space-around">space-around</option>
-          <option value="space-evenly">space-evenly</option>
-          <option value="stretch">stretch</option>
-        </select>&gt;
-      </div>
-      <flex-container id="flex-container" style="min-height: 240px;"></flex-container>
-      <div style="margin-top: 16px;">
-        &lt;/flex-container&gt;
-        <button id="add" class="btn" type="button">Add a cell</button>
-        <button id="remove" class="btn" type="button">Remove a cell</button>
-      </div>
-      <template id="template-flex-item">
-        <flex-item style="padding: 16px; border: 1px dashed #999;">
-          &lt;flex-item
-          oreder=<input type="number" class="order">
-          flex-grow=<input type="number" class="flex-grow">
-          flex-shrink=<input type="number" class="flex-shrink">
-          flex-basis=<input type="number" class="flex-basis">
-          align-self=<select class="align-self">
-            <option value="" selected>-</option>
-            <option value="auto">auto</option>
-            <option value="flex-start">flex-start</option>
-            <option value="flex-end">flex-end</option>
-            <option value="center">center</option>
-            <option value="baseline">baseline</option>
-            <option value="stretch">stretch</option>
-          </select>&gt;
-          <p contenteditable="true">(click to edit)</p>
-          &lt;/flex-item&gt;
-        </flex-item>
-      </template>
     </div>
+    <github-corner>
+      <a href="https://github.com/1000ch/x-flexbox">GitHub</a>
+    </github-corner>
     <x-marked highlight class="container">
+# `<x-flexbox>`
+
+Web Components which provide Flexbox features.
+
 ## Install
 
 Using [npm](https://www.npmjs.org/package/x-flexbox):
@@ -158,5 +86,6 @@ Put `<flex-container>` and `<flex-item>`.
 
 [MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)
     </x-marked>
+    <fluid-iframe src="./demo/"></fluid-iframe>
   </body>
 </html>
