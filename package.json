@@ -24,11 +24,11 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.0",
-    "jest": "^26.0.0",
-    "terser": "^4.7.0",
-    "ts-jest": "^26.1.0",
-    "typescript": "^3.9.5"
+    "@types/jest": "^26.0.4",
+    "jest": "^26.1.0",
+    "terser": "^4.8.0",
+    "ts-jest": "^26.1.2",
+    "typescript": "^3.9.6"
   },
   "jest": {
     "moduleFileExtensions": [
