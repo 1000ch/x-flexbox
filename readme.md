@@ -1,10 +1,6 @@
-# `<x-flexbox>`
+# x-flexbox [![Build Status](https://travis-ci.org/1000ch/x-flexbox.svg?branch=master)](https://travis-ci.org/1000ch/x-flexbox) [![devDependency Status](https://david-dm.org/1000ch/x-flexbox/dev-status.svg)](https://david-dm.org/1000ch/x-flexbox?type=dev)
 
 > Web Components which provide Flexbox features.
-
-[![Build Status](https://travis-ci.org/1000ch/x-flexbox.svg?branch=master)](https://travis-ci.org/1000ch/x-flexbox)
-[![NPM version](https://badge.fury.io/js/x-flexbox.svg)](http://badge.fury.io/js/x-flexbox)
-[![devDependency Status](https://david-dm.org/1000ch/x-flexbox/dev-status.svg)](https://david-dm.org/1000ch/x-flexbox?type=dev)
 
 ## Install
 
