@@ -17,18 +17,22 @@
     "web": "https://github.com/1000ch"
   },
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.module.js",
+  "esmodule": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/index.mjs",
   "scripts": {
-    "build": "tsc && terser --output dist/index.js dist/index.js && terser --output dist/flex-container.js dist/flex-container.js && terser --output dist/flex-item.js dist/flex-item.js",
+    "build": "microbundle",
     "prepublish": "npm run build",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^26.0.4",
     "jest": "^26.1.0",
-    "terser": "^4.8.0",
+    "microbundle": "^0.12.3",
     "ts-jest": "^26.1.2",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "jest": {
     "moduleFileExtensions": [
