@@ -1,4 +1,4 @@
-# x-flexbox [![Build Status](https://travis-ci.org/1000ch/x-flexbox.svg?branch=master)](https://travis-ci.org/1000ch/x-flexbox) [![devDependency Status](https://david-dm.org/1000ch/x-flexbox/dev-status.svg)](https://david-dm.org/1000ch/x-flexbox?type=dev)
+# x-flexbox ![GitHub Actions Status](https://github.com/1000ch/x-flexbox/workflows/test/badge.svg)
 
 > Web Components which provide Flexbox features.
 
