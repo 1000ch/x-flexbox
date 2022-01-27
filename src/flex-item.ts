@@ -15,6 +15,10 @@ const templateHTML = `
     :host([align-self="center"]) { align-self: center; }
     :host([align-self="baseline"]) { align-self: baseline; }
     :host([align-self="stretch"]) { align-self: stretch; }
+    :host([order]) { order: attr(order number); }
+    :host([flex-grow]) { flex-grow: attr(flex-grow number); }
+    :host([flex-shrink]) { flex-shrink: attr(flex-shrink number); }
+    :host([flex-basis]) { flex-basis: attr(flex-basis number); }
   </style>
   <slot />
 `;
@@ -27,23 +31,6 @@ export default class FlexItem extends HTMLElement {
       'flex-shrink',
       'flex-basis'
     ];
-  }
-
-  attributeChangedCallback(name: string, oldValue: string, newValue: string): void {
-    switch (name) {
-      case 'order':
-        this.style.order = newValue;
-        break;
-      case 'flex-grow':
-        this.style.flexGrow = newValue;
-        break;
-      case 'flex-shrink':
-        this.style.flexShrink = newValue;
-        break;
-      case 'flex-basis':
-        this.style.flexBasis = newValue;
-        break;
-    }
   }
 
   /**
