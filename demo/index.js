@@ -9,6 +9,9 @@ const flexWrap = document.querySelector('#flex-wrap');
 const justifyContent = document.querySelector('#justify-content');
 const alignItems = document.querySelector('#align-items');
 const alignContent = document.querySelector('#align-content');
+const gap = document.querySelector('#gap');
+const rowGap = document.querySelector('#row-gap');
+const columnGap = document.querySelector('#column-gap');
 
 flexDirection.addEventListener('change', () => {
   flexContainer.flexDirection = flexDirection.value;
@@ -28,6 +31,18 @@ alignItems.addEventListener('change', () => {
 
 alignContent.addEventListener('change', () => {
   flexContainer.alignContent = alignContent.value;
+});
+
+gap.addEventListener('input', () => {
+  flexContainer.gap = gap.value;
+});
+
+rowGap.addEventListener('input', () => {
+  flexContainer.gap = rowGap.value;
+});
+
+columnGap.addEventListener('input', () => {
+  flexContainer.gap = columnGap.value;
 });
 
 const template = document.querySelector('#template-flex-item');
