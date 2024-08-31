@@ -1,4 +1,4 @@
-# x-flexbox ![GitHub Actions Status](https://github.com/1000ch/x-flexbox/workflows/test/badge.svg)
+# x-flexbox [![test](https://github.com/1000ch/x-flexbox/actions/workflows/test.yml/badge.svg)](https://github.com/1000ch/x-flexbox/actions/workflows/test.yml)
 
 > Web Components which provide Flexbox features.
 
