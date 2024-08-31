@@ -51,6 +51,7 @@ const alignContentValues = [
 const templateHTML = `
   <style>
     :host { display: flex; }
+    :host([inline]) { display: inline-flex; }
 
     :host([flex-direction="row"]) { flex-direction: row; }
     :host([flex-direction="row-reverse"]) { flex-direction: row-reverse; }
@@ -91,6 +92,10 @@ const templateHTML = `
     :host([align-content="space-around"]) { align-content: space-around; }
     :host([align-content="space-evenly"]) { align-content: space-evenly; }
     :host([align-content="stretch"]) { align-content: stretch; }
+
+    :host([gap]) { gap: attr(gap); }
+    :host([row-gap]) { row-gap: attr(row-gap); }
+    :host([column-gap]) { column-gap: attr(column-gap); }
   </style>
   <slot />
 `;
@@ -203,6 +208,72 @@ export default class FlexContainer extends HTMLElement {
       this.removeAttribute('align-content');
     } else if (alignContentValues.includes(value)) {
       this.setAttribute('align-content', value);
+    }
+  }
+
+  /**
+   * Gets the gap of the object.
+   */
+  get gap(): string | undefined {
+    if (this.hasAttribute('gap')) {
+      return this.getAttribute('gap') || undefined;
+    }
+
+    return undefined;
+  }
+
+  /**
+   * Sets the gap of the object.
+   */
+  set gap(value: string | undefined) {
+    if (value == null) {
+      this.removeAttribute('gap');
+    } else {
+      this.setAttribute('gap', value);
+    }
+  }
+
+  /**
+   * Gets the rowGap of the object.
+   */
+  get rowGap(): string | undefined {
+    if (this.hasAttribute('row-gap')) {
+      return this.getAttribute('row-gap') || undefined;
+    }
+
+    return undefined;
+  }
+
+  /**
+   * Sets the rowGap of the object.
+   */
+  set rowGap(value: string | undefined) {
+    if (value == null) {
+      this.removeAttribute('row-gap');
+    } else {
+      this.setAttribute('row-gap', value);
+    }
+  }
+
+  /**
+   * Gets the columnGap of the object.
+   */
+  get columnGap(): string | undefined {
+    if (this.hasAttribute('column-gap')) {
+      return this.getAttribute('column-gap') || undefined;
+    }
+
+    return undefined;
+  }
+
+  /**
+   * Sets the columnGap of the object.
+   */
+  set columnGap(value: string | undefined) {
+    if (value == null) {
+      this.removeAttribute('column-gap');
+    } else {
+      this.setAttribute('column-gap', value);
     }
   }
 
